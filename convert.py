@@ -52,7 +52,7 @@ if not args.skip_matching:
         logging.error(f"Feature matching failed with code {exit_code}. Exiting.")
         exit(exit_code)
 
-    ### Bundle adjustment
+    ### Bundle adjustment 稀疏重建 使用ba（bundle adjustment）优化生成的三维点
     # The default Mapper tolerance is unnecessarily large,
     # decreasing it speeds up bundle adjustment steps.
     mapper_cmd = (colmap_command + " mapper \
